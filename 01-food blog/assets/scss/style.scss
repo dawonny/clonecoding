@@ -1,0 +1,144 @@
+/* 특정 페이지 (혹은 특정 대분류)에 최적화된 내용만 정의하기 위한 파일
+    이 파일이 reset -> common 순서로 조합된 파일을 import하므로
+    html에서는 이 파일의 결과로 생성된 css만 참조하면 된다.
+    이러한 형태의 파일은 페이지 대분류에 따라 개별적으로 만드는 것이 
+    코드 관리에 유리하다 */ 
+
+
+/* 공통 파일의 내용 가져오기 */
+@import '../scss/common.scss';
+
+
+.main {
+    .main-container {
+        box-sizing: border-box;
+        padding: 16px 12px;
+        max-width: 1200px;
+        margin: auto;
+
+        @include lg {
+            padding: 24px 32px;
+        }
+
+        .food-gallery {
+            display: flex;
+            flex-wrap: wrap;
+
+            .food-item {
+                box-sizing: border-box;
+                width: 100%;
+
+                @include sm {
+                    width: 50%;
+                }
+
+                @include md {
+                    width: 25%;
+                }
+
+                padding: 0 12px;
+                margin-bottom: 24px;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: $black;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    .food-content {
+                        padding: 16px 8px;
+
+                        h2 {
+                            font-size: 24px;
+                            text-align: center;
+                            margin-bottom: 12px;
+                            line-height: 130%;
+                        }
+
+                        p {
+                            font-size: 17px;
+                            font-weight: 300;
+                            line-height: 120%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .paging {
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+
+            li {
+                margin: 0 5px;
+                width: 32px;
+                height: 32px;
+
+                &.active {
+                    background-color: $black;
+
+                    a {
+                        color: $white;
+                    }
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: $black;
+                    font-size: 18px;
+                    text-align: center;
+                    line-height: 32px;
+
+                    &:hover {
+                        background-color: $black-op;
+                    }
+                }
+            }
+        }
+
+        .divider {
+            margin: 60px 0;
+            width: auto;
+            border-top: 1px solid $light-gray;
+            border-bottom: 0;
+        }
+
+        .profile {
+            text-align: center;
+
+            h2 {
+                font-size: 32px;
+                margin-bottom: 32px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 26px;
+            }
+
+            h3 {
+                font-size: 26px;
+                margin-bottom: 16px;
+            }
+
+            h4 {
+                font-size: 18px;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 125%;
+
+            }
+        }
+    }
+}

@@ -1,0 +1,174 @@
+/* 모든 페이지에서 사용될 공통적인 내용들을 정의하기 위한 파일
+    */
+
+//글꼴 설정
+//구글 웹 폰트 설정
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//아이콘 폰트 지정
+//@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+//모든 태그에 기본 글꼴로 지정함
+*  {
+    font-family: 'Noto Sans', sans-serif;
+    }
+
+//reset 설정
+@import '../scss/reset.scss';
+@import '../scss/responsive.scss';
+
+//사이트의  기본 색상값들에 대한 변수 설정
+//실제 퍼이지 작업시에는 사이트의 색상 테마의 값들을 나열
+$black: #000;
+$white: #fff;
+$light-gray: #ddd;
+$gray: #616161;
+$black-op: rgba(0, 0, 0, 0.2);
+
+// body
+body {
+    /*  .header가 position: flex;에 따라 주변 요소 위에 떠 있기 때문에 주변 요소를 가리게 되므로
+        .header의 높이만큼 여백을 설정하여 가려지는 현상을 해결해야 함 */
+        padding-top: 63px;
+
+}
+
+//상단 영역
+.header {
+    position: fixed;        //스크롤에 상관 없이 상단 고정
+    left: 0;
+    top: 0;
+    width: 100%;            //position: absolute, fixed 지정시 크기 설정 필수
+    height: 64px;
+    background-color: $white;
+    box-shadow: 0 1px 3px $black-op;
+
+
+    .header-cotainer {
+        max-width: 1200px;      //최대넓이 1200px, 최소넓이 제한 없음 ( 모바일 대응용)
+        margin: auto;           //박스의 가운데 정렬
+        display: flex;          //자식 요소들을 가로로 배치하게 함
+
+        // 양쪽의 아이콘 박스 공통 속성
+        .icon-box {
+            display: block;
+            font-size: 30px;
+            font-weight: 900;
+            padding: 16px;
+            color: $black;
+            transition: all 0.1s ease-in;
+
+            &:hover {
+                background-color: $light-gray;
+                color: $white;
+            }
+        }
+
+        .title-box {
+            // 부모에게 display:flex가 적용된 상태에서
+            // 부모 안의 다른 아이템의 크기를 제와한 나머지 공간을 차지하도록 설정
+            flex: 1;
+            text-align: center;
+            display: flex;              // .text-box안에서 h1을 중앙에 배치하기 (1)
+            flex-direction: column;     //.text-box안에서 h1을 중앙에 배치하기 (2)
+
+
+            h1 {
+                margin: auto;           //.text-box안에서 h1을 중앙에 배치하기 (3)
+                font-size: 30px;
+                font-weight: 800;
+                padding-bottom: 5px;
+            }
+        }
+
+        .mail-icon-box {
+            margin-left: auto; // 이 박스를 부모 안에서 오른쪽 끝에 배치
+        }
+    }
+}
+
+// 하단 영역
+.footer {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: auto;
+    border-top: 1px solid $light-gray;
+    padding-top: 10px;
+
+    @include lg {
+        display: flex;
+        padding-top: 40px;
+    }
+
+    .footer-item {
+        width: 100%;
+        padding-bottom: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @include lg {
+            width: 33.3%;
+            margin: 0 16px;
+            padding-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700px;
+            text-transform: uppercase;  //모든 글자를 대문자로 변환 <--> Lowercase
+            margin: 10px 0; 
+
+            @include lg {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 150%;
+        }
+
+        .blogkist {
+            a {
+                color: $black;
+                text-decoration: none;
+                display: flex;
+                margin: 20px 0;
+                padding: 0 10px;
+            }
+
+            img {
+                width: 65px;
+                height: 65px;
+                object-fit: cover;
+                margin-right: 10px;
+            }
+
+            .text-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .title {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .tags {
+        span {
+            display: inline-block;
+            background-color: $gray;
+            padding: 5px 10px;
+            margin-bottom: 8px;
+            color: $white;
+            font-size: 13px;
+
+            &.black {
+                background-color: $black;
+            }
+        }
+    }
+}
