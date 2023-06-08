@@ -1,0 +1,94 @@
+// 글꼴 설정
+
+// 구글 웹 폰트 설정
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+// 아이콘 폰트 지정
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+// 모든 태그에 기본 글꼴로 지정함
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+// reset 설정
+@import './reset.scss';
+
+
+// 반응형 웹 설정
+@import './responsive.scss';
+
+/* 사이트의 기본 색상값들에 대한 변수 설정
+
+    실제 페이지 작업시에는 사이트의 색상 테마의 값들을 나열 */
+
+$black: #000;
+$dark-gray: #444;
+$gray: #616161;
+$blue: #002c5f;
+$white: #f1f1f1;
+
+// 웹 페이지 전역에 적용될 기본 스타일
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    border-bottom: none;
+    padding: 0 30px;
+    @media md {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .header-container{
+        display: flex;
+        height: 80px;   
+        margin: 0 300px;
+        justify-content: space-between; //균일한 간격 
+        align-items: center;
+        //align-items: center //수직축 방향정렬 : 가운데 정렬
+        .main logo {
+            display: block;
+            width: 166px;
+        }
+
+        .main_menu {
+            display: flex;
+            width: 76.07%;
+            .menu_list {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 840px;
+                .list {
+                    display: flex;
+                    align-items: center;
+                    width: 70%;
+                    min-width: 500px;
+                    justify-content: space-between;
+                  
+                }
+            }
+        }
+
+        .icon-box {
+            width: 29.8%;
+            min-width: 250px;
+            .icon{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+                padding-left: 60px;
+            }
+        }
+    }
+}
+
+

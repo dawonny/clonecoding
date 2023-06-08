@@ -1,0 +1,143 @@
+// 모든 페이지에서 사용될 공통적인 내용들을 정의하기 위한 파일
+
+
+
+// 글꼴 설정
+
+// 구글 웹 폰트 설정
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+// 아이콘 폰트 지정
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
+
+// 모든 태그에 기본 글꼴로 지정함
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+// reset 설정
+@import './reset.scss';
+
+// 반응형 웹 설정
+//@import './responsive.scss';
+
+/* 사이트의 기본 색상값들에 대한 변수 설정
+
+    실제 페이지 작업시에는 사이트의 색상 테마의 값들을 나열 */
+
+$black: #000;
+$dark-gray: #444;
+$gray: #616161;
+$blue: #002c5f;
+$white: #f1f1f1;
+
+// 웹 페이지 전역에 적용될 기본 스타일
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+    body {
+        padding-top: 63px;
+        font-family: "HyundaiSansTextKR","Magul Gothic";
+        font-size: 16px;
+        //*body, html
+        position: relative;
+        height: 100%;
+
+        display: block;
+
+    }
+
+ a {
+    text-decoration: 0;
+    color: $black
+ }
+
+//  상단영역
+.header {
+    position: fixed; //스크롤에 상관없이 상단 고정
+    top: 0;
+    width: 100%;
+    padding: 0 30px;
+    //height: 80px;
+    border-bottom: none;
+    background-color: $white;
+
+    .header-container {
+        display: flex; //자식 요소들을 가로로 배치
+        height: 80px;
+        justify-content: space-between; //균일한 간격 
+        align-items: center //수직축 방향정렬 : 가운데 정렬
+       // -webkit-box-align: center;
+        //-webkit-box-pack: justify;
+        //이건 뭘까...?
+        //max-width; 1400px;
+        //margin: 0 auto;
+        
+        .gnb_wrap {
+            min-width: calc(500px + 29%);
+            display: flex;
+            width: 76.07%;
+            box-sizing: border-box;
+
+            .inb_menu {
+                display: flex;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+                //이건 모바일 같은데
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+
+                .inb_list {
+                    -webkit-box-align: center;
+                    align-items: center;
+                    width: 55%;
+                    min-width: 500px;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                }
+            }
+        }
+
+        .top-logo {
+            color: $blue;
+            box-sizing: border-box;
+            display: block;
+            width: 166px;
+            position: absolute; //브라우저이 끝을 기준으로 좌표가 설정된다.
+        }
+
+        .gnb_wrap {
+            min-width: calc(500px + 29%);
+            display: flex;
+            width: 76.07%;
+            box-sizing: border-box;
+
+            
+        }
+
+        .main-menu-box {
+            display: flex;
+            justify-content: space-between;
+
+            .menu-list {
+                align-items: center;
+                width: 55%;
+                min-width: 500px;
+            }
+        }
+        .icon-box {
+            margin-left: auto; //이 박스를 부모 안에서 오른쪽 끝에 배치
+        }
+    }
+
+}
+
+// 하단영역
+.footer {
+    
+}
