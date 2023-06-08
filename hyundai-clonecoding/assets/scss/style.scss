@@ -1,0 +1,45 @@
+/* 특정 페이지 (혹은 특정 대분류)에 최적화된 내용만 정의하기 위한 파일
+    이 파일이 reset -> common 순서로 조합된 파일을 import하므로
+    html에서는 이 파일의 결과로 생성된 css만 참조하면 된다.
+    이러한 형태의 파일은 페이지 대분류에 따라 개별적으로 만드는 것이 
+    코드 관리에 유리하다 */ 
+
+
+/* 공통 파일의 내용 가져오기 */
+@import 'common_text.scss';
+
+.main {
+    height: 100%;
+    position: relative;
+
+    .main-container {
+        position: relative;
+        left: auto;
+        top: 80px;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        overflow: visible;
+        background-color: #f0f;
+
+        .main-inner-box {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+            .txt-wrap {
+                position: absolute;
+                left: 7vw;
+                top: 152px;
+                right: 0;
+                z-index: 1;
+                width: 1260px;
+                height: auto;
+                margin: 0 auto;
+                text-align: left;
+            }
+        }
+    }
+}
