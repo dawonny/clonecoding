@@ -9,18 +9,37 @@
 @import 'common_text.scss';
 
 .main {
+    height: 100%;
+    position: relative;
+
     .main-container {
         position: relative;
+        left: auto;
+        top: 80px;
         margin: 0 auto;
         display: block;
         width: 100%;
         overflow: visible;
+        background-color: #f0f;
 
         .main-inner-box {
             width: 100%;
             margin: 0 auto;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
 
+            .txt-wrap {
+                position: absolute;
+                left: 7vw;
+                top: 152px;
+                right: 0;
+                z-index: 1;
+                width: 1260px;
+                height: auto;
+                margin: 0 auto;
+                text-align: left;
+            }
         }
     }
 }
