@@ -88,13 +88,18 @@ img {
         }
         .top-bar {
             text-align: right;
-            padding-top: 18px;
-            .li{
+            padding-top: 18px; 
+          li {
                 display: inline-block;
                 font-size: 0.75rem;
                 font-weight: 300;
                 color: #8b8b8b;
+
+                :nth-child(3) {
+                    margin-right: 15px;
+                }
             }
+
             .sns-fb {
                 margin: 0 3px;
                 font-size: 0;
@@ -128,7 +133,9 @@ img {
 
 }
 
-// 하단영역
-.footer {
+
+
+// // 하단영역
+// .footer {
     
-}
+// }
