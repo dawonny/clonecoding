@@ -26,9 +26,9 @@
     실제 페이지 작업시에는 사이트의 색상 테마의 값들을 나열 */
 
 $black: #000;
-$dark-gray: #444;
+$yellow: #ffe600;
 $gray: #8b8b8b;
-$light-gray: #eee;
+$light-white: #e0e0e0;
 $white: #fff;
 
 // 웹 페이지 전역에 적용될 기본 스타일
@@ -57,10 +57,10 @@ a {
     color: $black
 }
 
-img {
-    max-width: 100%;
-    vertical-align: 700;
-}
+// img {
+//     max-width: 100%;
+//     vertical-align: 700;
+// }
 
 //  상단영역
 .header {
@@ -93,7 +93,17 @@ img {
                 display: inline-block;
                 font-size: 0.75rem;
                 font-weight: 300;
-                color: #8b8b8b;
+                color: $gray;
+                 
+                ::after {
+                    display: inline-block;
+                    width: 1px;
+                    height: 10px;
+                    margin: 14px;
+                    vertical-align: middle;
+                    background: $light-white;
+                    content: '';   
+                }
 
                 :nth-child(3) {
                     margin-right: 15px;
@@ -104,10 +114,19 @@ img {
                 margin: 0 3px;
                 font-size: 0;
                 vertical-align: middle;
+                content: url(../img/topbar1.jpg)
+                }
+
+            .sns-insta {
+                margin-right: 15px;
+                font-size: 0;
+                vertical-align: middle;
+                content: url(../img/topbar2.jpg);
             }
         }
         .nav_wrap {
             margin-top: -20px;
+            padding: 5px 5px;
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
@@ -116,17 +135,22 @@ img {
                 width: 194px;
             }
         }
-        .nav-bar {
-            margin: 0 -39px;
+        .nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
 
-            /*
-            .in_header .navbar>li {
+            .nav-bar {
+                margin: 0 -39px;  
+                
+                li {
                     display: inline-block;
                     padding: 0 39px;
                     list-style: none;
                     font-size: 0.937rem;
+                    font-weight: 600;
+                }
             }
-            */
         }
 
     }
