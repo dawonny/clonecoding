@@ -96,6 +96,9 @@
             background: url(../img/main_sec1.jpg) no-repeat;
             background-size: cover;
             background-position: 60%;
+            float: left;
+            width: 50%;
+            height: 320px;
         }
         dl {
             margin: 0;
@@ -121,7 +124,8 @@
         }
         .view-btn {
             left: auto;
-            right: 550px;
+            right: 92%;
+            top: 49%;
             margin-left: 0;
 
             position: absolute;
@@ -132,6 +136,18 @@
             box-shadow: 3px 0 11px rgba(138, 138, 138 ,0.2);
             transition: all .3s ease;
             z-index: 1;
+
+            span {
+                position: absolute;
+                display: block;
+                left: -9999px;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                font-size: 0;
+                line-height: 0;
+                text-indent: -9999px;
+            }
 
         }
     }
