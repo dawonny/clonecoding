@@ -8,14 +8,15 @@
 //아이콘 폰트 지정
 //@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
 
+
 //모든 태그에 기본 글꼴로 지정함
 *  {
     font-family: 'Noto Sans', sans-serif;
     }
 
 //reset 설정
-@import '../scss/reset.scss';
-@import '../scss/responsive.scss';
+@import 'reset.scss';
+@import 'responsive.scss';
 
 //사이트의  기본 색상값들에 대한 변수 설정
 //실제 퍼이지 작업시에는 사이트의 색상 테마의 값들을 나열
@@ -44,10 +45,11 @@ body {
     box-shadow: 0 1px 3px $black-op;
 
 
-    .header-cotainer {
+    .header-container {
         max-width: 1200px;      //최대넓이 1200px, 최소넓이 제한 없음 ( 모바일 대응용)
         margin: auto;           //박스의 가운데 정렬
         display: flex;          //자식 요소들을 가로로 배치하게 함
+        padding: 15px;
 
         // 양쪽의 아이콘 박스 공통 속성
         .icon-box {
@@ -128,7 +130,7 @@ body {
             line-height: 150%;
         }
 
-        .blogkist {
+        .bolglist {
             a {
                 color: $black;
                 text-decoration: none;
